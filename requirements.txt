@@ -1,2 +1,3 @@
 camel-ai[all]
 python-dotenv
+ipykernel
