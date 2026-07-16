@@ -2,3 +2,7 @@ OPENAI_API_KEY=<your_openai_api_key>
 OPENAI_API_BASE_URL=<your_openai_base_url>  # Optional: for proxy services
 ANTHROPIC_API_KEY=<your_anthropic_api_key>
 GOOGLE_API_KEY=<your_google_api_key>
+
+# Optional
+DEFAULT_MODEL_PLATFORM_TYPE=openai  # e.g., openai, anthropic, etc.
+DEFAULT_MODEL_TYPE=gpt-4o-mini      # e.g., gpt-3.5-turbo, gpt-4o-mini, etc.
