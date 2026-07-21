@@ -1,0 +1,1299 @@
+INFO - 2026-07-20 14:53:47,532 - social.agent - Agent 0: {'success': True, 'post_id': 1}
+INFO - 2026-07-20 14:53:47,552 - social.agent - Agent 0: {'success': True, 'comment_id': 1}
+INFO - 2026-07-20 14:53:47,574 - social.agent - Agent 1: {'success': True, 'comment_id': 2}
+INFO - 2026-07-20 14:53:47,778 - social.agent - Agent 0 observing environment: And there are many group chat channels {}
+And You are already in some groups []
+You receive some messages from them {}
+You can join the groups you are interested, leave the groups you already in, send messages to the group you already in.
+You must make sure you can only send messages to the group you are already in
+After refreshing, you see some posts [
+    {
+        "post_id": 1,
+        "user_id": 0,
+        "content": "Hello, world!",
+        "created_at": "2026-07-20 14:53:59.427510",
+        "score": 0,
+        "num_shares": 0,
+        "num_reports": 0,
+        "comments": [
+            {
+                "comment_id": 1,
+                "post_id": 1,
+                "user_id": 0,
+                "content": "Welcome to the OASIS World!",
+                "created_at": "2026-07-20 14:53:59.449530",
+                "score": 0
+            },
+            {
+                "comment_id": 2,
+                "post_id": 1,
+                "user_id": 1,
+                "content": "I like the OASIS world.",
+                "created_at": "2026-07-20 14:53:59.462490",
+                "score": 0
+            }
+        ]
+    }
+]
+pick one you want to perform action that best reflects your current inclination based on your profile and posts content. Do not limit your action in just `like` to like posts
+INFO - 2026-07-20 14:53:48,035 - social.agent - Agent 1 observing environment: And there are many group chat channels {}
+And You are already in some groups []
+You receive some messages from them {}
+You can join the groups you are interested, leave the groups you already in, send messages to the group you already in.
+You must make sure you can only send messages to the group you are already in
+After refreshing, you see some posts [
+    {
+        "post_id": 1,
+        "user_id": 0,
+        "content": "Hello, world!",
+        "created_at": "2026-07-20 14:53:59.427510",
+        "score": 0,
+        "num_shares": 0,
+        "num_reports": 0,
+        "comments": [
+            {
+                "comment_id": 1,
+                "post_id": 1,
+                "user_id": 0,
+                "content": "Welcome to the OASIS World!",
+                "created_at": "2026-07-20 14:53:59.449530",
+                "score": 0
+            },
+            {
+                "comment_id": 2,
+                "post_id": 1,
+                "user_id": 1,
+                "content": "I like the OASIS world.",
+                "created_at": "2026-07-20 14:53:59.462490",
+                "score": 0
+            }
+        ]
+    }
+]
+pick one you want to perform action that best reflects your current inclination based on your profile and posts content. Do not limit your action in just `like` to like posts
+INFO - 2026-07-20 14:53:48,053 - social.agent - Agent 2 observing environment: And there are many group chat channels {}
+And You are already in some groups []
+You receive some messages from them {}
+You can join the groups you are interested, leave the groups you already in, send messages to the group you already in.
+You must make sure you can only send messages to the group you are already in
+After refreshing, you see some posts [
+    {
+        "post_id": 1,
+        "user_id": 0,
+        "content": "Hello, world!",
+        "created_at": "2026-07-20 14:53:59.427510",
+        "score": 0,
+        "num_shares": 0,
+        "num_reports": 0,
+        "comments": [
+            {
+                "comment_id": 1,
+                "post_id": 1,
+                "user_id": 0,
+                "content": "Welcome to the OASIS World!",
+                "created_at": "2026-07-20 14:53:59.449530",
+                "score": 0
+            },
+            {
+                "comment_id": 2,
+                "post_id": 1,
+                "user_id": 1,
+                "content": "I like the OASIS world.",
+                "created_at": "2026-07-20 14:53:59.462490",
+                "score": 0
+            }
+        ]
+    }
+]
+pick one you want to perform action that best reflects your current inclination based on your profile and posts content. Do not limit your action in just `like` to like posts
+INFO - 2026-07-20 14:53:48,071 - social.agent - Agent 3 observing environment: And there are many group chat channels {}
+And You are already in some groups []
+You receive some messages from them {}
+You can join the groups you are interested, leave the groups you already in, send messages to the group you already in.
+You must make sure you can only send messages to the group you are already in
+After refreshing, you see some posts [
+    {
+        "post_id": 1,
+        "user_id": 0,
+        "content": "Hello, world!",
+        "created_at": "2026-07-20 14:53:59.427510",
+        "score": 0,
+        "num_shares": 0,
+        "num_reports": 0,
+        "comments": [
+            {
+                "comment_id": 1,
+                "post_id": 1,
+                "user_id": 0,
+                "content": "Welcome to the OASIS World!",
+                "created_at": "2026-07-20 14:53:59.449530",
+                "score": 0
+            },
+            {
+                "comment_id": 2,
+                "post_id": 1,
+                "user_id": 1,
+                "content": "I like the OASIS world.",
+                "created_at": "2026-07-20 14:53:59.462490",
+                "score": 0
+            }
+        ]
+    }
+]
+pick one you want to perform action that best reflects your current inclination based on your profile and posts content. Do not limit your action in just `like` to like posts
+INFO - 2026-07-20 14:53:48,095 - social.agent - Agent 4 observing environment: And there are many group chat channels {}
+And You are already in some groups []
+You receive some messages from them {}
+You can join the groups you are interested, leave the groups you already in, send messages to the group you already in.
+You must make sure you can only send messages to the group you are already in
+After refreshing, you see some posts [
+    {
+        "post_id": 1,
+        "user_id": 0,
+        "content": "Hello, world!",
+        "created_at": "2026-07-20 14:53:59.427510",
+        "score": 0,
+        "num_shares": 0,
+        "num_reports": 0,
+        "comments": [
+            {
+                "comment_id": 1,
+                "post_id": 1,
+                "user_id": 0,
+                "content": "Welcome to the OASIS World!",
+                "created_at": "2026-07-20 14:53:59.449530",
+                "score": 0
+            },
+            {
+                "comment_id": 2,
+                "post_id": 1,
+                "user_id": 1,
+                "content": "I like the OASIS world.",
+                "created_at": "2026-07-20 14:53:59.462490",
+                "score": 0
+            }
+        ]
+    }
+]
+pick one you want to perform action that best reflects your current inclination based on your profile and posts content. Do not limit your action in just `like` to like posts
+INFO - 2026-07-20 14:53:48,112 - social.agent - Agent 5 observing environment: And there are many group chat channels {}
+And You are already in some groups []
+You receive some messages from them {}
+You can join the groups you are interested, leave the groups you already in, send messages to the group you already in.
+You must make sure you can only send messages to the group you are already in
+After refreshing, you see some posts [
+    {
+        "post_id": 1,
+        "user_id": 0,
+        "content": "Hello, world!",
+        "created_at": "2026-07-20 14:53:59.427510",
+        "score": 0,
+        "num_shares": 0,
+        "num_reports": 0,
+        "comments": [
+            {
+                "comment_id": 1,
+                "post_id": 1,
+                "user_id": 0,
+                "content": "Welcome to the OASIS World!",
+                "created_at": "2026-07-20 14:53:59.449530",
+                "score": 0
+            },
+            {
+                "comment_id": 2,
+                "post_id": 1,
+                "user_id": 1,
+                "content": "I like the OASIS world.",
+                "created_at": "2026-07-20 14:53:59.462490",
+                "score": 0
+            }
+        ]
+    }
+]
+pick one you want to perform action that best reflects your current inclination based on your profile and posts content. Do not limit your action in just `like` to like posts
+INFO - 2026-07-20 14:53:48,132 - social.agent - Agent 6 observing environment: And there are many group chat channels {}
+And You are already in some groups []
+You receive some messages from them {}
+You can join the groups you are interested, leave the groups you already in, send messages to the group you already in.
+You must make sure you can only send messages to the group you are already in
+After refreshing, you see some posts [
+    {
+        "post_id": 1,
+        "user_id": 0,
+        "content": "Hello, world!",
+        "created_at": "2026-07-20 14:53:59.427510",
+        "score": 0,
+        "num_shares": 0,
+        "num_reports": 0,
+        "comments": [
+            {
+                "comment_id": 1,
+                "post_id": 1,
+                "user_id": 0,
+                "content": "Welcome to the OASIS World!",
+                "created_at": "2026-07-20 14:53:59.449530",
+                "score": 0
+            },
+            {
+                "comment_id": 2,
+                "post_id": 1,
+                "user_id": 1,
+                "content": "I like the OASIS world.",
+                "created_at": "2026-07-20 14:53:59.462490",
+                "score": 0
+            }
+        ]
+    }
+]
+pick one you want to perform action that best reflects your current inclination based on your profile and posts content. Do not limit your action in just `like` to like posts
+INFO - 2026-07-20 14:53:48,159 - social.agent - Agent 7 observing environment: And there are many group chat channels {}
+And You are already in some groups []
+You receive some messages from them {}
+You can join the groups you are interested, leave the groups you already in, send messages to the group you already in.
+You must make sure you can only send messages to the group you are already in
+After refreshing, you see some posts [
+    {
+        "post_id": 1,
+        "user_id": 0,
+        "content": "Hello, world!",
+        "created_at": "2026-07-20 14:53:59.427510",
+        "score": 0,
+        "num_shares": 0,
+        "num_reports": 0,
+        "comments": [
+            {
+                "comment_id": 1,
+                "post_id": 1,
+                "user_id": 0,
+                "content": "Welcome to the OASIS World!",
+                "created_at": "2026-07-20 14:53:59.449530",
+                "score": 0
+            },
+            {
+                "comment_id": 2,
+                "post_id": 1,
+                "user_id": 1,
+                "content": "I like the OASIS world.",
+                "created_at": "2026-07-20 14:53:59.462490",
+                "score": 0
+            }
+        ]
+    }
+]
+pick one you want to perform action that best reflects your current inclination based on your profile and posts content. Do not limit your action in just `like` to like posts
+INFO - 2026-07-20 14:53:48,177 - social.agent - Agent 8 observing environment: And there are many group chat channels {}
+And You are already in some groups []
+You receive some messages from them {}
+You can join the groups you are interested, leave the groups you already in, send messages to the group you already in.
+You must make sure you can only send messages to the group you are already in
+After refreshing, you see some posts [
+    {
+        "post_id": 1,
+        "user_id": 0,
+        "content": "Hello, world!",
+        "created_at": "2026-07-20 14:53:59.427510",
+        "score": 0,
+        "num_shares": 0,
+        "num_reports": 0,
+        "comments": [
+            {
+                "comment_id": 1,
+                "post_id": 1,
+                "user_id": 0,
+                "content": "Welcome to the OASIS World!",
+                "created_at": "2026-07-20 14:53:59.449530",
+                "score": 0
+            },
+            {
+                "comment_id": 2,
+                "post_id": 1,
+                "user_id": 1,
+                "content": "I like the OASIS world.",
+                "created_at": "2026-07-20 14:53:59.462490",
+                "score": 0
+            }
+        ]
+    }
+]
+pick one you want to perform action that best reflects your current inclination based on your profile and posts content. Do not limit your action in just `like` to like posts
+INFO - 2026-07-20 14:53:48,197 - social.agent - Agent 9 observing environment: And there are many group chat channels {}
+And You are already in some groups []
+You receive some messages from them {}
+You can join the groups you are interested, leave the groups you already in, send messages to the group you already in.
+You must make sure you can only send messages to the group you are already in
+After refreshing, you see some posts [
+    {
+        "post_id": 1,
+        "user_id": 0,
+        "content": "Hello, world!",
+        "created_at": "2026-07-20 14:53:59.427510",
+        "score": 0,
+        "num_shares": 0,
+        "num_reports": 0,
+        "comments": [
+            {
+                "comment_id": 1,
+                "post_id": 1,
+                "user_id": 0,
+                "content": "Welcome to the OASIS World!",
+                "created_at": "2026-07-20 14:53:59.449530",
+                "score": 0
+            },
+            {
+                "comment_id": 2,
+                "post_id": 1,
+                "user_id": 1,
+                "content": "I like the OASIS world.",
+                "created_at": "2026-07-20 14:53:59.462490",
+                "score": 0
+            }
+        ]
+    }
+]
+pick one you want to perform action that best reflects your current inclination based on your profile and posts content. Do not limit your action in just `like` to like posts
+INFO - 2026-07-20 14:53:48,215 - social.agent - Agent 10 observing environment: And there are many group chat channels {}
+And You are already in some groups []
+You receive some messages from them {}
+You can join the groups you are interested, leave the groups you already in, send messages to the group you already in.
+You must make sure you can only send messages to the group you are already in
+After refreshing, you see some posts [
+    {
+        "post_id": 1,
+        "user_id": 0,
+        "content": "Hello, world!",
+        "created_at": "2026-07-20 14:53:59.427510",
+        "score": 0,
+        "num_shares": 0,
+        "num_reports": 0,
+        "comments": [
+            {
+                "comment_id": 1,
+                "post_id": 1,
+                "user_id": 0,
+                "content": "Welcome to the OASIS World!",
+                "created_at": "2026-07-20 14:53:59.449530",
+                "score": 0
+            },
+            {
+                "comment_id": 2,
+                "post_id": 1,
+                "user_id": 1,
+                "content": "I like the OASIS world.",
+                "created_at": "2026-07-20 14:53:59.462490",
+                "score": 0
+            }
+        ]
+    }
+]
+pick one you want to perform action that best reflects your current inclination based on your profile and posts content. Do not limit your action in just `like` to like posts
+INFO - 2026-07-20 14:53:48,231 - social.agent - Agent 11 observing environment: And there are many group chat channels {}
+And You are already in some groups []
+You receive some messages from them {}
+You can join the groups you are interested, leave the groups you already in, send messages to the group you already in.
+You must make sure you can only send messages to the group you are already in
+After refreshing, you see some posts [
+    {
+        "post_id": 1,
+        "user_id": 0,
+        "content": "Hello, world!",
+        "created_at": "2026-07-20 14:53:59.427510",
+        "score": 0,
+        "num_shares": 0,
+        "num_reports": 0,
+        "comments": [
+            {
+                "comment_id": 1,
+                "post_id": 1,
+                "user_id": 0,
+                "content": "Welcome to the OASIS World!",
+                "created_at": "2026-07-20 14:53:59.449530",
+                "score": 0
+            },
+            {
+                "comment_id": 2,
+                "post_id": 1,
+                "user_id": 1,
+                "content": "I like the OASIS world.",
+                "created_at": "2026-07-20 14:53:59.462490",
+                "score": 0
+            }
+        ]
+    }
+]
+pick one you want to perform action that best reflects your current inclination based on your profile and posts content. Do not limit your action in just `like` to like posts
+INFO - 2026-07-20 14:53:48,246 - social.agent - Agent 12 observing environment: And there are many group chat channels {}
+And You are already in some groups []
+You receive some messages from them {}
+You can join the groups you are interested, leave the groups you already in, send messages to the group you already in.
+You must make sure you can only send messages to the group you are already in
+After refreshing, you see some posts [
+    {
+        "post_id": 1,
+        "user_id": 0,
+        "content": "Hello, world!",
+        "created_at": "2026-07-20 14:53:59.427510",
+        "score": 0,
+        "num_shares": 0,
+        "num_reports": 0,
+        "comments": [
+            {
+                "comment_id": 1,
+                "post_id": 1,
+                "user_id": 0,
+                "content": "Welcome to the OASIS World!",
+                "created_at": "2026-07-20 14:53:59.449530",
+                "score": 0
+            },
+            {
+                "comment_id": 2,
+                "post_id": 1,
+                "user_id": 1,
+                "content": "I like the OASIS world.",
+                "created_at": "2026-07-20 14:53:59.462490",
+                "score": 0
+            }
+        ]
+    }
+]
+pick one you want to perform action that best reflects your current inclination based on your profile and posts content. Do not limit your action in just `like` to like posts
+INFO - 2026-07-20 14:53:48,262 - social.agent - Agent 13 observing environment: And there are many group chat channels {}
+And You are already in some groups []
+You receive some messages from them {}
+You can join the groups you are interested, leave the groups you already in, send messages to the group you already in.
+You must make sure you can only send messages to the group you are already in
+After refreshing, you see some posts [
+    {
+        "post_id": 1,
+        "user_id": 0,
+        "content": "Hello, world!",
+        "created_at": "2026-07-20 14:53:59.427510",
+        "score": 0,
+        "num_shares": 0,
+        "num_reports": 0,
+        "comments": [
+            {
+                "comment_id": 1,
+                "post_id": 1,
+                "user_id": 0,
+                "content": "Welcome to the OASIS World!",
+                "created_at": "2026-07-20 14:53:59.449530",
+                "score": 0
+            },
+            {
+                "comment_id": 2,
+                "post_id": 1,
+                "user_id": 1,
+                "content": "I like the OASIS world.",
+                "created_at": "2026-07-20 14:53:59.462490",
+                "score": 0
+            }
+        ]
+    }
+]
+pick one you want to perform action that best reflects your current inclination based on your profile and posts content. Do not limit your action in just `like` to like posts
+INFO - 2026-07-20 14:53:48,276 - social.agent - Agent 14 observing environment: And there are many group chat channels {}
+And You are already in some groups []
+You receive some messages from them {}
+You can join the groups you are interested, leave the groups you already in, send messages to the group you already in.
+You must make sure you can only send messages to the group you are already in
+After refreshing, you see some posts [
+    {
+        "post_id": 1,
+        "user_id": 0,
+        "content": "Hello, world!",
+        "created_at": "2026-07-20 14:53:59.427510",
+        "score": 0,
+        "num_shares": 0,
+        "num_reports": 0,
+        "comments": [
+            {
+                "comment_id": 1,
+                "post_id": 1,
+                "user_id": 0,
+                "content": "Welcome to the OASIS World!",
+                "created_at": "2026-07-20 14:53:59.449530",
+                "score": 0
+            },
+            {
+                "comment_id": 2,
+                "post_id": 1,
+                "user_id": 1,
+                "content": "I like the OASIS world.",
+                "created_at": "2026-07-20 14:53:59.462490",
+                "score": 0
+            }
+        ]
+    }
+]
+pick one you want to perform action that best reflects your current inclination based on your profile and posts content. Do not limit your action in just `like` to like posts
+INFO - 2026-07-20 14:53:48,292 - social.agent - Agent 15 observing environment: And there are many group chat channels {}
+And You are already in some groups []
+You receive some messages from them {}
+You can join the groups you are interested, leave the groups you already in, send messages to the group you already in.
+You must make sure you can only send messages to the group you are already in
+After refreshing, you see some posts [
+    {
+        "post_id": 1,
+        "user_id": 0,
+        "content": "Hello, world!",
+        "created_at": "2026-07-20 14:53:59.427510",
+        "score": 0,
+        "num_shares": 0,
+        "num_reports": 0,
+        "comments": [
+            {
+                "comment_id": 1,
+                "post_id": 1,
+                "user_id": 0,
+                "content": "Welcome to the OASIS World!",
+                "created_at": "2026-07-20 14:53:59.449530",
+                "score": 0
+            },
+            {
+                "comment_id": 2,
+                "post_id": 1,
+                "user_id": 1,
+                "content": "I like the OASIS world.",
+                "created_at": "2026-07-20 14:53:59.462490",
+                "score": 0
+            }
+        ]
+    }
+]
+pick one you want to perform action that best reflects your current inclination based on your profile and posts content. Do not limit your action in just `like` to like posts
+INFO - 2026-07-20 14:53:48,307 - social.agent - Agent 16 observing environment: And there are many group chat channels {}
+And You are already in some groups []
+You receive some messages from them {}
+You can join the groups you are interested, leave the groups you already in, send messages to the group you already in.
+You must make sure you can only send messages to the group you are already in
+After refreshing, you see some posts [
+    {
+        "post_id": 1,
+        "user_id": 0,
+        "content": "Hello, world!",
+        "created_at": "2026-07-20 14:53:59.427510",
+        "score": 0,
+        "num_shares": 0,
+        "num_reports": 0,
+        "comments": [
+            {
+                "comment_id": 1,
+                "post_id": 1,
+                "user_id": 0,
+                "content": "Welcome to the OASIS World!",
+                "created_at": "2026-07-20 14:53:59.449530",
+                "score": 0
+            },
+            {
+                "comment_id": 2,
+                "post_id": 1,
+                "user_id": 1,
+                "content": "I like the OASIS world.",
+                "created_at": "2026-07-20 14:53:59.462490",
+                "score": 0
+            }
+        ]
+    }
+]
+pick one you want to perform action that best reflects your current inclination based on your profile and posts content. Do not limit your action in just `like` to like posts
+INFO - 2026-07-20 14:53:48,325 - social.agent - Agent 17 observing environment: And there are many group chat channels {}
+And You are already in some groups []
+You receive some messages from them {}
+You can join the groups you are interested, leave the groups you already in, send messages to the group you already in.
+You must make sure you can only send messages to the group you are already in
+After refreshing, you see some posts [
+    {
+        "post_id": 1,
+        "user_id": 0,
+        "content": "Hello, world!",
+        "created_at": "2026-07-20 14:53:59.427510",
+        "score": 0,
+        "num_shares": 0,
+        "num_reports": 0,
+        "comments": [
+            {
+                "comment_id": 1,
+                "post_id": 1,
+                "user_id": 0,
+                "content": "Welcome to the OASIS World!",
+                "created_at": "2026-07-20 14:53:59.449530",
+                "score": 0
+            },
+            {
+                "comment_id": 2,
+                "post_id": 1,
+                "user_id": 1,
+                "content": "I like the OASIS world.",
+                "created_at": "2026-07-20 14:53:59.462490",
+                "score": 0
+            }
+        ]
+    }
+]
+pick one you want to perform action that best reflects your current inclination based on your profile and posts content. Do not limit your action in just `like` to like posts
+INFO - 2026-07-20 14:53:48,340 - social.agent - Agent 18 observing environment: And there are many group chat channels {}
+And You are already in some groups []
+You receive some messages from them {}
+You can join the groups you are interested, leave the groups you already in, send messages to the group you already in.
+You must make sure you can only send messages to the group you are already in
+After refreshing, you see some posts [
+    {
+        "post_id": 1,
+        "user_id": 0,
+        "content": "Hello, world!",
+        "created_at": "2026-07-20 14:53:59.427510",
+        "score": 0,
+        "num_shares": 0,
+        "num_reports": 0,
+        "comments": [
+            {
+                "comment_id": 1,
+                "post_id": 1,
+                "user_id": 0,
+                "content": "Welcome to the OASIS World!",
+                "created_at": "2026-07-20 14:53:59.449530",
+                "score": 0
+            },
+            {
+                "comment_id": 2,
+                "post_id": 1,
+                "user_id": 1,
+                "content": "I like the OASIS world.",
+                "created_at": "2026-07-20 14:53:59.462490",
+                "score": 0
+            }
+        ]
+    }
+]
+pick one you want to perform action that best reflects your current inclination based on your profile and posts content. Do not limit your action in just `like` to like posts
+INFO - 2026-07-20 14:53:48,356 - social.agent - Agent 19 observing environment: And there are many group chat channels {}
+And You are already in some groups []
+You receive some messages from them {}
+You can join the groups you are interested, leave the groups you already in, send messages to the group you already in.
+You must make sure you can only send messages to the group you are already in
+After refreshing, you see some posts [
+    {
+        "post_id": 1,
+        "user_id": 0,
+        "content": "Hello, world!",
+        "created_at": "2026-07-20 14:53:59.427510",
+        "score": 0,
+        "num_shares": 0,
+        "num_reports": 0,
+        "comments": [
+            {
+                "comment_id": 1,
+                "post_id": 1,
+                "user_id": 0,
+                "content": "Welcome to the OASIS World!",
+                "created_at": "2026-07-20 14:53:59.449530",
+                "score": 0
+            },
+            {
+                "comment_id": 2,
+                "post_id": 1,
+                "user_id": 1,
+                "content": "I like the OASIS world.",
+                "created_at": "2026-07-20 14:53:59.462490",
+                "score": 0
+            }
+        ]
+    }
+]
+pick one you want to perform action that best reflects your current inclination based on your profile and posts content. Do not limit your action in just `like` to like posts
+INFO - 2026-07-20 14:53:48,372 - social.agent - Agent 20 observing environment: And there are many group chat channels {}
+And You are already in some groups []
+You receive some messages from them {}
+You can join the groups you are interested, leave the groups you already in, send messages to the group you already in.
+You must make sure you can only send messages to the group you are already in
+After refreshing, you see some posts [
+    {
+        "post_id": 1,
+        "user_id": 0,
+        "content": "Hello, world!",
+        "created_at": "2026-07-20 14:53:59.427510",
+        "score": 0,
+        "num_shares": 0,
+        "num_reports": 0,
+        "comments": [
+            {
+                "comment_id": 1,
+                "post_id": 1,
+                "user_id": 0,
+                "content": "Welcome to the OASIS World!",
+                "created_at": "2026-07-20 14:53:59.449530",
+                "score": 0
+            },
+            {
+                "comment_id": 2,
+                "post_id": 1,
+                "user_id": 1,
+                "content": "I like the OASIS world.",
+                "created_at": "2026-07-20 14:53:59.462490",
+                "score": 0
+            }
+        ]
+    }
+]
+pick one you want to perform action that best reflects your current inclination based on your profile and posts content. Do not limit your action in just `like` to like posts
+INFO - 2026-07-20 14:53:48,384 - social.agent - Agent 21 observing environment: And there are many group chat channels {}
+And You are already in some groups []
+You receive some messages from them {}
+You can join the groups you are interested, leave the groups you already in, send messages to the group you already in.
+You must make sure you can only send messages to the group you are already in
+After refreshing, you see some posts [
+    {
+        "post_id": 1,
+        "user_id": 0,
+        "content": "Hello, world!",
+        "created_at": "2026-07-20 14:53:59.427510",
+        "score": 0,
+        "num_shares": 0,
+        "num_reports": 0,
+        "comments": [
+            {
+                "comment_id": 1,
+                "post_id": 1,
+                "user_id": 0,
+                "content": "Welcome to the OASIS World!",
+                "created_at": "2026-07-20 14:53:59.449530",
+                "score": 0
+            },
+            {
+                "comment_id": 2,
+                "post_id": 1,
+                "user_id": 1,
+                "content": "I like the OASIS world.",
+                "created_at": "2026-07-20 14:53:59.462490",
+                "score": 0
+            }
+        ]
+    }
+]
+pick one you want to perform action that best reflects your current inclination based on your profile and posts content. Do not limit your action in just `like` to like posts
+INFO - 2026-07-20 14:53:48,399 - social.agent - Agent 22 observing environment: And there are many group chat channels {}
+And You are already in some groups []
+You receive some messages from them {}
+You can join the groups you are interested, leave the groups you already in, send messages to the group you already in.
+You must make sure you can only send messages to the group you are already in
+After refreshing, you see some posts [
+    {
+        "post_id": 1,
+        "user_id": 0,
+        "content": "Hello, world!",
+        "created_at": "2026-07-20 14:53:59.427510",
+        "score": 0,
+        "num_shares": 0,
+        "num_reports": 0,
+        "comments": [
+            {
+                "comment_id": 1,
+                "post_id": 1,
+                "user_id": 0,
+                "content": "Welcome to the OASIS World!",
+                "created_at": "2026-07-20 14:53:59.449530",
+                "score": 0
+            },
+            {
+                "comment_id": 2,
+                "post_id": 1,
+                "user_id": 1,
+                "content": "I like the OASIS world.",
+                "created_at": "2026-07-20 14:53:59.462490",
+                "score": 0
+            }
+        ]
+    }
+]
+pick one you want to perform action that best reflects your current inclination based on your profile and posts content. Do not limit your action in just `like` to like posts
+INFO - 2026-07-20 14:53:48,416 - social.agent - Agent 23 observing environment: And there are many group chat channels {}
+And You are already in some groups []
+You receive some messages from them {}
+You can join the groups you are interested, leave the groups you already in, send messages to the group you already in.
+You must make sure you can only send messages to the group you are already in
+After refreshing, you see some posts [
+    {
+        "post_id": 1,
+        "user_id": 0,
+        "content": "Hello, world!",
+        "created_at": "2026-07-20 14:53:59.427510",
+        "score": 0,
+        "num_shares": 0,
+        "num_reports": 0,
+        "comments": [
+            {
+                "comment_id": 1,
+                "post_id": 1,
+                "user_id": 0,
+                "content": "Welcome to the OASIS World!",
+                "created_at": "2026-07-20 14:53:59.449530",
+                "score": 0
+            },
+            {
+                "comment_id": 2,
+                "post_id": 1,
+                "user_id": 1,
+                "content": "I like the OASIS world.",
+                "created_at": "2026-07-20 14:53:59.462490",
+                "score": 0
+            }
+        ]
+    }
+]
+pick one you want to perform action that best reflects your current inclination based on your profile and posts content. Do not limit your action in just `like` to like posts
+INFO - 2026-07-20 14:53:48,430 - social.agent - Agent 24 observing environment: And there are many group chat channels {}
+And You are already in some groups []
+You receive some messages from them {}
+You can join the groups you are interested, leave the groups you already in, send messages to the group you already in.
+You must make sure you can only send messages to the group you are already in
+After refreshing, you see some posts [
+    {
+        "post_id": 1,
+        "user_id": 0,
+        "content": "Hello, world!",
+        "created_at": "2026-07-20 14:53:59.427510",
+        "score": 0,
+        "num_shares": 0,
+        "num_reports": 0,
+        "comments": [
+            {
+                "comment_id": 1,
+                "post_id": 1,
+                "user_id": 0,
+                "content": "Welcome to the OASIS World!",
+                "created_at": "2026-07-20 14:53:59.449530",
+                "score": 0
+            },
+            {
+                "comment_id": 2,
+                "post_id": 1,
+                "user_id": 1,
+                "content": "I like the OASIS world.",
+                "created_at": "2026-07-20 14:53:59.462490",
+                "score": 0
+            }
+        ]
+    }
+]
+pick one you want to perform action that best reflects your current inclination based on your profile and posts content. Do not limit your action in just `like` to like posts
+INFO - 2026-07-20 14:53:48,446 - social.agent - Agent 25 observing environment: And there are many group chat channels {}
+And You are already in some groups []
+You receive some messages from them {}
+You can join the groups you are interested, leave the groups you already in, send messages to the group you already in.
+You must make sure you can only send messages to the group you are already in
+After refreshing, you see some posts [
+    {
+        "post_id": 1,
+        "user_id": 0,
+        "content": "Hello, world!",
+        "created_at": "2026-07-20 14:53:59.427510",
+        "score": 0,
+        "num_shares": 0,
+        "num_reports": 0,
+        "comments": [
+            {
+                "comment_id": 1,
+                "post_id": 1,
+                "user_id": 0,
+                "content": "Welcome to the OASIS World!",
+                "created_at": "2026-07-20 14:53:59.449530",
+                "score": 0
+            },
+            {
+                "comment_id": 2,
+                "post_id": 1,
+                "user_id": 1,
+                "content": "I like the OASIS world.",
+                "created_at": "2026-07-20 14:53:59.462490",
+                "score": 0
+            }
+        ]
+    }
+]
+pick one you want to perform action that best reflects your current inclination based on your profile and posts content. Do not limit your action in just `like` to like posts
+INFO - 2026-07-20 14:53:48,463 - social.agent - Agent 26 observing environment: And there are many group chat channels {}
+And You are already in some groups []
+You receive some messages from them {}
+You can join the groups you are interested, leave the groups you already in, send messages to the group you already in.
+You must make sure you can only send messages to the group you are already in
+After refreshing, you see some posts [
+    {
+        "post_id": 1,
+        "user_id": 0,
+        "content": "Hello, world!",
+        "created_at": "2026-07-20 14:53:59.427510",
+        "score": 0,
+        "num_shares": 0,
+        "num_reports": 0,
+        "comments": [
+            {
+                "comment_id": 1,
+                "post_id": 1,
+                "user_id": 0,
+                "content": "Welcome to the OASIS World!",
+                "created_at": "2026-07-20 14:53:59.449530",
+                "score": 0
+            },
+            {
+                "comment_id": 2,
+                "post_id": 1,
+                "user_id": 1,
+                "content": "I like the OASIS world.",
+                "created_at": "2026-07-20 14:53:59.462490",
+                "score": 0
+            }
+        ]
+    }
+]
+pick one you want to perform action that best reflects your current inclination based on your profile and posts content. Do not limit your action in just `like` to like posts
+INFO - 2026-07-20 14:53:48,479 - social.agent - Agent 27 observing environment: And there are many group chat channels {}
+And You are already in some groups []
+You receive some messages from them {}
+You can join the groups you are interested, leave the groups you already in, send messages to the group you already in.
+You must make sure you can only send messages to the group you are already in
+After refreshing, you see some posts [
+    {
+        "post_id": 1,
+        "user_id": 0,
+        "content": "Hello, world!",
+        "created_at": "2026-07-20 14:53:59.427510",
+        "score": 0,
+        "num_shares": 0,
+        "num_reports": 0,
+        "comments": [
+            {
+                "comment_id": 1,
+                "post_id": 1,
+                "user_id": 0,
+                "content": "Welcome to the OASIS World!",
+                "created_at": "2026-07-20 14:53:59.449530",
+                "score": 0
+            },
+            {
+                "comment_id": 2,
+                "post_id": 1,
+                "user_id": 1,
+                "content": "I like the OASIS world.",
+                "created_at": "2026-07-20 14:53:59.462490",
+                "score": 0
+            }
+        ]
+    }
+]
+pick one you want to perform action that best reflects your current inclination based on your profile and posts content. Do not limit your action in just `like` to like posts
+INFO - 2026-07-20 14:53:48,496 - social.agent - Agent 28 observing environment: And there are many group chat channels {}
+And You are already in some groups []
+You receive some messages from them {}
+You can join the groups you are interested, leave the groups you already in, send messages to the group you already in.
+You must make sure you can only send messages to the group you are already in
+After refreshing, you see some posts [
+    {
+        "post_id": 1,
+        "user_id": 0,
+        "content": "Hello, world!",
+        "created_at": "2026-07-20 14:53:59.427510",
+        "score": 0,
+        "num_shares": 0,
+        "num_reports": 0,
+        "comments": [
+            {
+                "comment_id": 1,
+                "post_id": 1,
+                "user_id": 0,
+                "content": "Welcome to the OASIS World!",
+                "created_at": "2026-07-20 14:53:59.449530",
+                "score": 0
+            },
+            {
+                "comment_id": 2,
+                "post_id": 1,
+                "user_id": 1,
+                "content": "I like the OASIS world.",
+                "created_at": "2026-07-20 14:53:59.462490",
+                "score": 0
+            }
+        ]
+    }
+]
+pick one you want to perform action that best reflects your current inclination based on your profile and posts content. Do not limit your action in just `like` to like posts
+INFO - 2026-07-20 14:53:48,513 - social.agent - Agent 29 observing environment: And there are many group chat channels {}
+And You are already in some groups []
+You receive some messages from them {}
+You can join the groups you are interested, leave the groups you already in, send messages to the group you already in.
+You must make sure you can only send messages to the group you are already in
+After refreshing, you see some posts [
+    {
+        "post_id": 1,
+        "user_id": 0,
+        "content": "Hello, world!",
+        "created_at": "2026-07-20 14:53:59.427510",
+        "score": 0,
+        "num_shares": 0,
+        "num_reports": 0,
+        "comments": [
+            {
+                "comment_id": 1,
+                "post_id": 1,
+                "user_id": 0,
+                "content": "Welcome to the OASIS World!",
+                "created_at": "2026-07-20 14:53:59.449530",
+                "score": 0
+            },
+            {
+                "comment_id": 2,
+                "post_id": 1,
+                "user_id": 1,
+                "content": "I like the OASIS world.",
+                "created_at": "2026-07-20 14:53:59.462490",
+                "score": 0
+            }
+        ]
+    }
+]
+pick one you want to perform action that best reflects your current inclination based on your profile and posts content. Do not limit your action in just `like` to like posts
+INFO - 2026-07-20 14:53:48,529 - social.agent - Agent 30 observing environment: And there are many group chat channels {}
+And You are already in some groups []
+You receive some messages from them {}
+You can join the groups you are interested, leave the groups you already in, send messages to the group you already in.
+You must make sure you can only send messages to the group you are already in
+After refreshing, you see some posts [
+    {
+        "post_id": 1,
+        "user_id": 0,
+        "content": "Hello, world!",
+        "created_at": "2026-07-20 14:53:59.427510",
+        "score": 0,
+        "num_shares": 0,
+        "num_reports": 0,
+        "comments": [
+            {
+                "comment_id": 1,
+                "post_id": 1,
+                "user_id": 0,
+                "content": "Welcome to the OASIS World!",
+                "created_at": "2026-07-20 14:53:59.449530",
+                "score": 0
+            },
+            {
+                "comment_id": 2,
+                "post_id": 1,
+                "user_id": 1,
+                "content": "I like the OASIS world.",
+                "created_at": "2026-07-20 14:53:59.462490",
+                "score": 0
+            }
+        ]
+    }
+]
+pick one you want to perform action that best reflects your current inclination based on your profile and posts content. Do not limit your action in just `like` to like posts
+INFO - 2026-07-20 14:53:48,545 - social.agent - Agent 31 observing environment: And there are many group chat channels {}
+And You are already in some groups []
+You receive some messages from them {}
+You can join the groups you are interested, leave the groups you already in, send messages to the group you already in.
+You must make sure you can only send messages to the group you are already in
+After refreshing, you see some posts [
+    {
+        "post_id": 1,
+        "user_id": 0,
+        "content": "Hello, world!",
+        "created_at": "2026-07-20 14:53:59.427510",
+        "score": 0,
+        "num_shares": 0,
+        "num_reports": 0,
+        "comments": [
+            {
+                "comment_id": 1,
+                "post_id": 1,
+                "user_id": 0,
+                "content": "Welcome to the OASIS World!",
+                "created_at": "2026-07-20 14:53:59.449530",
+                "score": 0
+            },
+            {
+                "comment_id": 2,
+                "post_id": 1,
+                "user_id": 1,
+                "content": "I like the OASIS world.",
+                "created_at": "2026-07-20 14:53:59.462490",
+                "score": 0
+            }
+        ]
+    }
+]
+pick one you want to perform action that best reflects your current inclination based on your profile and posts content. Do not limit your action in just `like` to like posts
+INFO - 2026-07-20 14:53:48,562 - social.agent - Agent 32 observing environment: And there are many group chat channels {}
+And You are already in some groups []
+You receive some messages from them {}
+You can join the groups you are interested, leave the groups you already in, send messages to the group you already in.
+You must make sure you can only send messages to the group you are already in
+After refreshing, you see some posts [
+    {
+        "post_id": 1,
+        "user_id": 0,
+        "content": "Hello, world!",
+        "created_at": "2026-07-20 14:53:59.427510",
+        "score": 0,
+        "num_shares": 0,
+        "num_reports": 0,
+        "comments": [
+            {
+                "comment_id": 1,
+                "post_id": 1,
+                "user_id": 0,
+                "content": "Welcome to the OASIS World!",
+                "created_at": "2026-07-20 14:53:59.449530",
+                "score": 0
+            },
+            {
+                "comment_id": 2,
+                "post_id": 1,
+                "user_id": 1,
+                "content": "I like the OASIS world.",
+                "created_at": "2026-07-20 14:53:59.462490",
+                "score": 0
+            }
+        ]
+    }
+]
+pick one you want to perform action that best reflects your current inclination based on your profile and posts content. Do not limit your action in just `like` to like posts
+INFO - 2026-07-20 14:53:48,578 - social.agent - Agent 33 observing environment: And there are many group chat channels {}
+And You are already in some groups []
+You receive some messages from them {}
+You can join the groups you are interested, leave the groups you already in, send messages to the group you already in.
+You must make sure you can only send messages to the group you are already in
+After refreshing, you see some posts [
+    {
+        "post_id": 1,
+        "user_id": 0,
+        "content": "Hello, world!",
+        "created_at": "2026-07-20 14:53:59.427510",
+        "score": 0,
+        "num_shares": 0,
+        "num_reports": 0,
+        "comments": [
+            {
+                "comment_id": 1,
+                "post_id": 1,
+                "user_id": 0,
+                "content": "Welcome to the OASIS World!",
+                "created_at": "2026-07-20 14:53:59.449530",
+                "score": 0
+            },
+            {
+                "comment_id": 2,
+                "post_id": 1,
+                "user_id": 1,
+                "content": "I like the OASIS world.",
+                "created_at": "2026-07-20 14:53:59.462490",
+                "score": 0
+            }
+        ]
+    }
+]
+pick one you want to perform action that best reflects your current inclination based on your profile and posts content. Do not limit your action in just `like` to like posts
+INFO - 2026-07-20 14:53:48,594 - social.agent - Agent 34 observing environment: And there are many group chat channels {}
+And You are already in some groups []
+You receive some messages from them {}
+You can join the groups you are interested, leave the groups you already in, send messages to the group you already in.
+You must make sure you can only send messages to the group you are already in
+After refreshing, you see some posts [
+    {
+        "post_id": 1,
+        "user_id": 0,
+        "content": "Hello, world!",
+        "created_at": "2026-07-20 14:53:59.427510",
+        "score": 0,
+        "num_shares": 0,
+        "num_reports": 0,
+        "comments": [
+            {
+                "comment_id": 1,
+                "post_id": 1,
+                "user_id": 0,
+                "content": "Welcome to the OASIS World!",
+                "created_at": "2026-07-20 14:53:59.449530",
+                "score": 0
+            },
+            {
+                "comment_id": 2,
+                "post_id": 1,
+                "user_id": 1,
+                "content": "I like the OASIS world.",
+                "created_at": "2026-07-20 14:53:59.462490",
+                "score": 0
+            }
+        ]
+    }
+]
+pick one you want to perform action that best reflects your current inclination based on your profile and posts content. Do not limit your action in just `like` to like posts
+INFO - 2026-07-20 14:53:48,612 - social.agent - Agent 35 observing environment: And there are many group chat channels {}
+And You are already in some groups []
+You receive some messages from them {}
+You can join the groups you are interested, leave the groups you already in, send messages to the group you already in.
+You must make sure you can only send messages to the group you are already in
+After refreshing, you see some posts [
+    {
+        "post_id": 1,
+        "user_id": 0,
+        "content": "Hello, world!",
+        "created_at": "2026-07-20 14:53:59.427510",
+        "score": 0,
+        "num_shares": 0,
+        "num_reports": 0,
+        "comments": [
+            {
+                "comment_id": 1,
+                "post_id": 1,
+                "user_id": 0,
+                "content": "Welcome to the OASIS World!",
+                "created_at": "2026-07-20 14:53:59.449530",
+                "score": 0
+            },
+            {
+                "comment_id": 2,
+                "post_id": 1,
+                "user_id": 1,
+                "content": "I like the OASIS world.",
+                "created_at": "2026-07-20 14:53:59.462490",
+                "score": 0
+            }
+        ]
+    }
+]
+pick one you want to perform action that best reflects your current inclination based on your profile and posts content. Do not limit your action in just `like` to like posts
+ERROR - 2026-07-20 14:53:49,098 - social.agent - Agent 29 error: Error code: 400 - {'error': {'code': '1211', 'message': 'Unknown Model, please check the model code.'}}
+ERROR - 2026-07-20 14:53:49,119 - social.agent - Agent 20 error: Error code: 400 - {'error': {'code': '1211', 'message': 'Unknown Model, please check the model code.'}}
+ERROR - 2026-07-20 14:53:49,147 - social.agent - Agent 3 error: Error code: 400 - {'error': {'code': '1211', 'message': 'Unknown Model, please check the model code.'}}
+ERROR - 2026-07-20 14:53:49,147 - social.agent - Agent 35 error: Error code: 400 - {'error': {'code': '1211', 'message': 'Unknown Model, please check the model code.'}}
+ERROR - 2026-07-20 14:53:49,205 - social.agent - Agent 25 error: Error code: 400 - {'error': {'code': '1211', 'message': 'Unknown Model, please check the model code.'}}
+ERROR - 2026-07-20 14:53:49,206 - social.agent - Agent 17 error: Error code: 400 - {'error': {'code': '1211', 'message': 'Unknown Model, please check the model code.'}}
+ERROR - 2026-07-20 14:53:49,231 - social.agent - Agent 22 error: Error code: 400 - {'error': {'code': '1211', 'message': 'Unknown Model, please check the model code.'}}
+ERROR - 2026-07-20 14:53:49,233 - social.agent - Agent 14 error: Error code: 400 - {'error': {'code': '1211', 'message': 'Unknown Model, please check the model code.'}}
+ERROR - 2026-07-20 14:53:49,235 - social.agent - Agent 18 error: Error code: 400 - {'error': {'code': '1211', 'message': 'Unknown Model, please check the model code.'}}
+ERROR - 2026-07-20 14:53:49,236 - social.agent - Agent 8 error: Error code: 400 - {'error': {'code': '1211', 'message': 'Unknown Model, please check the model code.'}}
+ERROR - 2026-07-20 14:53:49,237 - social.agent - Agent 34 error: Error code: 400 - {'error': {'code': '1211', 'message': 'Unknown Model, please check the model code.'}}
+ERROR - 2026-07-20 14:53:49,237 - social.agent - Agent 7 error: Error code: 400 - {'error': {'code': '1211', 'message': 'Unknown Model, please check the model code.'}}
+ERROR - 2026-07-20 14:53:49,238 - social.agent - Agent 5 error: Error code: 400 - {'error': {'code': '1211', 'message': 'Unknown Model, please check the model code.'}}
+ERROR - 2026-07-20 14:53:49,244 - social.agent - Agent 19 error: Error code: 400 - {'error': {'code': '1211', 'message': 'Unknown Model, please check the model code.'}}
+ERROR - 2026-07-20 14:53:49,245 - social.agent - Agent 30 error: Error code: 400 - {'error': {'code': '1211', 'message': 'Unknown Model, please check the model code.'}}
+ERROR - 2026-07-20 14:53:49,250 - social.agent - Agent 26 error: Error code: 400 - {'error': {'code': '1211', 'message': 'Unknown Model, please check the model code.'}}
+ERROR - 2026-07-20 14:53:49,272 - social.agent - Agent 31 error: Error code: 400 - {'error': {'code': '1211', 'message': 'Unknown Model, please check the model code.'}}
+ERROR - 2026-07-20 14:53:49,290 - social.agent - Agent 0 error: Error code: 400 - {'error': {'code': '1211', 'message': 'Unknown Model, please check the model code.'}}
+ERROR - 2026-07-20 14:53:49,290 - social.agent - Agent 28 error: Error code: 400 - {'error': {'code': '1211', 'message': 'Unknown Model, please check the model code.'}}
+ERROR - 2026-07-20 14:53:49,308 - social.agent - Agent 4 error: Error code: 400 - {'error': {'code': '1211', 'message': 'Unknown Model, please check the model code.'}}
+ERROR - 2026-07-20 14:53:49,310 - social.agent - Agent 16 error: Error code: 400 - {'error': {'code': '1211', 'message': 'Unknown Model, please check the model code.'}}
+ERROR - 2026-07-20 14:53:49,311 - social.agent - Agent 10 error: Error code: 400 - {'error': {'code': '1211', 'message': 'Unknown Model, please check the model code.'}}
+ERROR - 2026-07-20 14:53:49,313 - social.agent - Agent 6 error: Error code: 400 - {'error': {'code': '1211', 'message': 'Unknown Model, please check the model code.'}}
+ERROR - 2026-07-20 14:53:49,316 - social.agent - Agent 24 error: Error code: 400 - {'error': {'code': '1211', 'message': 'Unknown Model, please check the model code.'}}
+ERROR - 2026-07-20 14:53:49,317 - social.agent - Agent 23 error: Error code: 400 - {'error': {'code': '1211', 'message': 'Unknown Model, please check the model code.'}}
+ERROR - 2026-07-20 14:53:49,321 - social.agent - Agent 15 error: Error code: 400 - {'error': {'code': '1211', 'message': 'Unknown Model, please check the model code.'}}
+ERROR - 2026-07-20 14:53:49,322 - social.agent - Agent 1 error: Error code: 400 - {'error': {'code': '1211', 'message': 'Unknown Model, please check the model code.'}}
+ERROR - 2026-07-20 14:53:49,327 - social.agent - Agent 11 error: Error code: 400 - {'error': {'code': '1211', 'message': 'Unknown Model, please check the model code.'}}
+ERROR - 2026-07-20 14:53:49,328 - social.agent - Agent 13 error: Error code: 400 - {'error': {'code': '1211', 'message': 'Unknown Model, please check the model code.'}}
+ERROR - 2026-07-20 14:53:49,329 - social.agent - Agent 21 error: Error code: 400 - {'error': {'code': '1211', 'message': 'Unknown Model, please check the model code.'}}
+ERROR - 2026-07-20 14:53:49,331 - social.agent - Agent 2 error: Error code: 400 - {'error': {'code': '1211', 'message': 'Unknown Model, please check the model code.'}}
+ERROR - 2026-07-20 14:53:49,332 - social.agent - Agent 9 error: Error code: 400 - {'error': {'code': '1211', 'message': 'Unknown Model, please check the model code.'}}
+ERROR - 2026-07-20 14:53:49,333 - social.agent - Agent 12 error: Error code: 400 - {'error': {'code': '1211', 'message': 'Unknown Model, please check the model code.'}}
+ERROR - 2026-07-20 14:53:49,337 - social.agent - Agent 33 error: Error code: 400 - {'error': {'code': '1211', 'message': 'Unknown Model, please check the model code.'}}
+ERROR - 2026-07-20 14:53:49,339 - social.agent - Agent 27 error: Error code: 400 - {'error': {'code': '1211', 'message': 'Unknown Model, please check the model code.'}}
+ERROR - 2026-07-20 14:53:49,340 - social.agent - Agent 32 error: Error code: 400 - {'error': {'code': '1211', 'message': 'Unknown Model, please check the model code.'}}

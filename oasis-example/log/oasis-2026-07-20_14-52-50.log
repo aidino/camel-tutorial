@@ -1,0 +1,5 @@
+2026-07-20 14:52:58,286 - oasis.env - INFO - update rec table.
+2026-07-20 14:52:58,441 - oasis.env - INFO - performed all actions.
+2026-07-20 14:52:58,442 - oasis.env - INFO - update rec table.
+2026-07-20 14:53:00,173 - oasis.env - INFO - performed all actions.
+2026-07-20 14:53:00,173 - oasis.env - INFO - Simulation finished! Please check the results in the database: /home/lai/Documents/camel-tutorial/oasis-example/data/reddit_simulation.db. Note that the trace table stored all the actions of the agents.
