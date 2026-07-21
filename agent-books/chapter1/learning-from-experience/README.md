@@ -13,6 +13,8 @@
 - [Chi Tiết Các Thành Phần](#-chi-tiết-các-thành-phần)
 - [Bản Đồ Trò Chơi](#-bản-đồ-trò-chơi)
 - [Cơ Chế Ẩn](#-cơ-chế-ẩn)
+- [LLM Agent](#-llm-agent)
+- [Quick Demo](#-quick-demo)
 - [Hướng Dẫn Sử Dụng](#-hướng-dẫn-sử-dụng)
 - [Hướng Dẫn Test](#-hướng-dẫn-test)
 - [Tham Khảo](#-tham-khảo)
@@ -153,6 +155,26 @@ TreasureHuntGame
 ├── _check_victory()             # Kiểm tra thắng/thua
 ├── reset(seed)                  # Đặt lại trò chơi
 └── get_hidden_rules()           # Xem luật ẩn (debug)
+
+GameExperience (dataclass)
+├── state_description: str  # Mô tả trạng thái trước hành động
+├── action: str             # Hành động đã thực hiện
+├── feedback: str           # Phản hồi từ môi trường
+├── reward: float           # Reward nhận được
+└── success: bool           # Kết quả tích cực?
+
+LLMAgent
+├── __init__(api_key, model, temperature, max_experiences)
+│                                # Khởi tạo Agent với OpenAI API
+├── _build_context(state, actions)  # Xây dựng ngữ cảnh ICL
+├── _build_prompt(context)       # Tạo prompt chain-of-thought
+├── choose_action(game, verbose) # Chọn hành động qua LLM
+├── update_experience(...)       # Lưu kinh nghiệm vào bộ nhớ
+├── play_episode(game, verbose)  # Chơi 1 episode
+├── train(num_episodes, ...)     # Huấn luyện qua nhiều episode
+├── evaluate(num_episodes, ...)  # Đánh giá hiệu suất
+├── save_experiences(filepath)   # Lưu kinh nghiệm ra JSON
+└── load_experiences(filepath)   # Tải kinh nghiệm từ JSON
 ```
 
 ---
@@ -161,10 +183,11 @@ TreasureHuntGame
 
 ```
 learning-from-experience/
-├── game_environments.py   # Module chính — môi trường trò chơi
-├── quick_demo.py          # Bản demo nhanh
-├── requirements.txt       # Các thư viện phụ thuộc
-├── .env                   # Cấu hình API key và model
+├── game_environments.py   # Môi trường trò chơi (5 phòng, vật phẩm, cơ chế ẩn)
+├── llm_agent.py           # LLM Agent — In-Context Learning với OpenAI API
+├── quick_demo.py          # Bản demo nhanh (3 phần: game, stochastic, LLM agent)
+├── requirements.txt       # Thư viện phụ thuộc (openai, dotenv, numpy, ...)
+├── .env                   # Cấu hình: OPENAI_API_KEY, DEFAULT_MODEL_TYPE
 └── README.md              # Tài liệu này
 ```
 
@@ -409,6 +432,47 @@ state = game.reset()
 print(game.get_hidden_rules())
 ```
 
+### Sử dụng LLM Agent
+
+```python
+from llm_agent import LLMAgent
+from game_environments import TreasureHuntGame
+
+# Khởi tạo Agent (tự động đọc OPENAI_API_KEY từ .env)
+agent = LLMAgent()
+
+# Hoặc chỉ định model cụ thể
+agent = LLMAgent(model="gpt-4o-mini", temperature=0.7)
+
+# Chơi 1 episode
+game = TreasureHuntGame(seed=42)
+total_reward, steps, victory = agent.play_episode(game, verbose=True)
+
+# Huấn luyện qua nhiều episode (tích lũy kinh nghiệm)
+results = agent.train(num_episodes=5, verbose=True)
+print(f"Tỷ lệ thắng: {results['victory_rate']:.0%}")
+
+# Đánh giá hiệu suất
+eval_results = agent.evaluate(num_episodes=3)
+print(f"Reward trung bình: {eval_results['avg_reward']:.1f}")
+
+# Lưu/tải kinh nghiệm
+agent.save_experiences("experiences.json")
+agent.load_experiences("experiences.json")
+```
+
+### Chạy Quick Demo
+
+```bash
+# Chạy toàn bộ demo (sẽ hỏi trước khi gọi API)
+python quick_demo.py
+
+# Demo bao gồm 3 phần:
+# 1. Môi trường trò chơi — chạy giải pháp tối ưu thủ công
+# 2. So sánh Deterministic vs Stochastic
+# 3. LLM Agent chơi 1 episode (cần OPENAI_API_KEY, tùy chọn)
+```
+
 ---
 
 ## 🧪 Hướng Dẫn Test
@@ -617,12 +681,79 @@ print('✅ Reset hoạt động đúng!')
 "
 ```
 
-### 8. Chạy tất cả test cùng lúc
+### 8. Test LLM Agent — Kiểm tra import và khởi tạo (không gọi API)
 
 ```bash
-# Chạy tuần tự tất cả test ở trên
+python3 -c "
+from llm_agent import LLMAgent, GameExperience
+from game_environments import TreasureHuntGame
+
+# Kiểm tra GameExperience
+exp = GameExperience('state', 'action', 'feedback', 1.0, True)
+assert exp.success == True
+print('✅ GameExperience hoạt động đúng')
+
+# Kiểm tra LLMAgent khởi tạo
+agent = LLMAgent()
+assert agent.model == 'gpt-4o-mini' or agent.model  # Có model
+assert agent.api_key  # Có API key
+assert len(agent.experiences) == 0
+print('✅ LLMAgent khởi tạo thành công')
+
+# Kiểm tra build context (tiếng Việt)
+game = TreasureHuntGame(seed=42)
+context = agent._build_context(game.get_state_description(), game.get_available_actions())
+assert 'kho báu của rồng' in context
+assert 'TÌNH HUỐNG HIỆN TẠI' in context
+print('✅ Context xây dựng đúng (tiếng Việt)')
+
+# Kiểm tra build prompt
+prompt = agent._build_prompt(context)
+assert 'ACTION:' in prompt
+assert 'suy luận từng bước' in prompt
+print('✅ Prompt xây dựng đúng (tiếng Việt)')
+
+# Kiểm tra update experience
+agent.update_experience('state', 'go north', 'OK', 5.0)
+agent.update_experience('state', 'fly', 'Fail', -1.0)
+assert len(agent.experiences) == 2
+assert agent.experiences[0].success == True
+assert agent.experiences[1].success == False
+print('✅ update_experience phân loại đúng')
+
+# Kiểm tra save/load
+import tempfile, os
+with tempfile.NamedTemporaryFile(suffix='.json', delete=False, dir='.') as f:
+    tmp = f.name
+agent.save_experiences(tmp)
+agent2 = LLMAgent()
+agent2.load_experiences(tmp)
+assert len(agent2.experiences) == 2
+os.unlink(tmp)
+print('✅ save/load experiences hoạt động đúng')
+
+print('\\n✅ Tất cả test LLM Agent đều thành công!')
+"
+```
+
+### 9. Test Quick Demo — Chạy demo không tương tác
+
+```bash
+# Chạy demo, tự động skip phần LLM Agent (trả lời "N")
+echo "N" | python3 quick_demo.py
+```
+
+Kết quả mong đợi:
+- Demo 1: Giải pháp tối ưu 11 bước → CHIẾN THẮNG
+- Demo 3: So sánh Deterministic vs Stochastic — reward khác nhau
+- Demo 2: Bỏ qua (không tốn token)
+
+### 10. Chạy tất cả test cùng lúc
+
+```bash
 python3 -c "
 from game_environments import TreasureHuntGame, ItemType
+from llm_agent import LLMAgent, GameExperience
 
 print('=' * 60)
 print('  CHẠY TOÀN BỘ TEST SUITE')
@@ -630,19 +761,19 @@ print('=' * 60)
 
 # --- Test 1: Import ---
 game = TreasureHuntGame(seed=42)
-print('\\n[1/7] ✅ Import và khởi tạo thành công')
+print('\\n[1/9] ✅ Import game_environments thành công')
 
 # --- Test 2: ItemType ---
 expected_types = {'KEY': 'chìa khóa', 'WEAPON': 'vũ khí', 'TREASURE': 'kho báu', 'TOOL': 'công cụ', 'POTION': 'thuốc'}
 for name, value in expected_types.items():
     assert ItemType[name].value == value
-print('[2/7] ✅ ItemType values đúng')
+print('[2/9] ✅ ItemType values đúng')
 
 # --- Test 3: Bản đồ ---
 assert len(game.rooms) == 5
 assert game.current_room.name == 'entrance'
 assert game.rooms['guard_room'].has_guard
-print('[3/7] ✅ Cấu trúc bản đồ đúng')
+print('[3/9] ✅ Cấu trúc bản đồ đúng')
 
 # --- Test 4: Giải pháp tối ưu ---
 game = TreasureHuntGame(seed=42)
@@ -651,7 +782,7 @@ for action in ['take rusty sword', 'go east', 'take red key', 'take magic crysta
                'attack with silver sword', 'go east', \"take dragon's treasure\"]:
     game.execute_action(action)
 assert game.victory
-print('[4/7] ✅ Giải pháp tối ưu hoạt động')
+print('[4/9] ✅ Giải pháp tối ưu hoạt động')
 
 # --- Test 5: Stochastic ---
 rewards = set()
@@ -660,7 +791,7 @@ for s in range(10):
     _, r, _ = g.execute_action('take rusty sword')
     rewards.add(round(r, 4))
 assert len(rewards) > 1
-print('[5/7] ✅ Stochastic mode hoạt động')
+print('[5/9] ✅ Stochastic mode hoạt động')
 
 # --- Test 6: Xử lý lỗi ---
 game = TreasureHuntGame(seed=42)
@@ -668,7 +799,7 @@ f, r, _ = game.execute_action('go west')
 assert r < 0
 f, r, _ = game.execute_action('fly away')
 assert r < 0
-print('[6/7] ✅ Xử lý lỗi đúng')
+print('[6/9] ✅ Xử lý lỗi đúng')
 
 # --- Test 7: Reset ---
 game = TreasureHuntGame(seed=42)
@@ -676,18 +807,101 @@ game.execute_action('take rusty sword')
 game.reset(seed=42)
 assert len(game.inventory) == 0
 assert game.moves == 0
-print('[7/7] ✅ Reset hoạt động đúng')
+print('[7/9] ✅ Reset hoạt động đúng')
+
+# --- Test 8: LLM Agent khởi tạo ---
+agent = LLMAgent()
+assert agent.model
+assert agent.api_key
+print('[8/9] ✅ LLMAgent khởi tạo thành công')
+
+# --- Test 9: LLM Agent context/prompt ---
+game = TreasureHuntGame(seed=42)
+ctx = agent._build_context(game.get_state_description(), game.get_available_actions())
+assert 'kho báu' in ctx
+prompt = agent._build_prompt(ctx)
+assert 'ACTION:' in prompt
+print('[9/9] ✅ LLM Agent context/prompt đúng')
 
 print('\\n' + '=' * 60)
-print('  ✅ TẤT CẢ 7/7 TEST ĐỀU THÀNH CÔNG!')
+print('  ✅ TẤT CẢ 9/9 TEST ĐỀU THÀNH CÔNG!')
 print('=' * 60)
 "
 ```
 
 ---
 
+## 🎬 Quick Demo
+
+File `quick_demo.py` cung cấp 3 phần demo:
+
+| Demo | Nội dung | Cần API? |
+|---|---|---|
+| **Demo 1** | Môi trường trò chơi — chạy giải pháp tối ưu 11 bước | ❌ |
+| **Demo 2** | So sánh Deterministic vs Stochastic | ❌ |
+| **Demo 3** | LLM Agent chơi 1 episode qua OpenAI API | ✅ |
+
+```bash
+# Chạy demo
+python quick_demo.py
+
+# Chạy demo tự động (skip LLM Agent)
+echo "N" | python quick_demo.py
+```
+
+---
+
+## 🤖 LLM Agent
+
+### Tổng quan
+
+`LLMAgent` sử dụng **In-Context Learning** — thay vì huấn luyện trọng số mô hình, Agent tích lũy kinh nghiệm và đưa chúng vào prompt để LLM tham khảo khi ra quyết định.
+
+### Luồng hoạt động
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                     LLMAgent                                │
+│                                                             │
+│  ┌───────────────┐    ┌──────────────┐    ┌──────────────┐ │
+│  │ Bộ nhớ kinh   │    │ Xây dựng     │    │ Gọi OpenAI   │ │
+│  │ nghiệm        │───→│ Context +    │───→│ API          │ │
+│  │ (experiences) │    │ Prompt       │    │ (gpt-4o-mini)│ │
+│  └───────────────┘    └──────────────┘    └──────┬───────┘ │
+│         ▲                                        │         │
+│         │                                        ▼         │
+│  ┌──────┴────────┐                      ┌──────────────┐   │
+│  │ Lưu kinh      │◀─────────────────────│ Parse ACTION │   │
+│  │ nghiệm mới    │    feedback, reward  │ từ phản hồi  │   │
+│  └───────────────┘                      └──────────────┘   │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### Cấu hình (`.env`)
+
+```env
+OPENAI_API_KEY=sk-proj-xxxxx
+DEFAULT_MODEL_TYPE=gpt-4o-mini
+```
+
+### API Methods
+
+| Method | Mô tả | Gọi API? |
+|---|---|---|
+| `LLMAgent(model, temperature)` | Khởi tạo, đọc `.env` | ❌ |
+| `choose_action(game)` | LLM suy luận chọn hành động | ✅ |
+| `play_episode(game)` | Chơi 1 ván đầy đủ | ✅ |
+| `train(num_episodes)` | Huấn luyện qua nhiều ván | ✅ |
+| `evaluate(num_episodes)` | Đánh giá hiệu suất | ✅ |
+| `update_experience(...)` | Lưu kinh nghiệm | ❌ |
+| `save_experiences(path)` | Xuất ra JSON | ❌ |
+| `load_experiences(path)` | Nhập từ JSON | ❌ |
+
+---
+
 ## 📚 Tham Khảo
 
 - **Shunyu Yao** — [ReAct: Synergizing Reasoning and Acting in Language Models](https://arxiv.org/abs/2210.03629)
-- **Reinforcement Learning từ text games** — Cách thiết kế môi trường cho LLM Agent
+- **In-Context Learning** — [A Survey on In-Context Learning](https://arxiv.org/abs/2301.00234)
+- **OpenAI API** — [platform.openai.com/docs](https://platform.openai.com/docs)
 - **CAMEL Framework** — [camel-ai.org](https://www.camel-ai.org/)
