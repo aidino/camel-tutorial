@@ -1,200 +1,159 @@
+#!/usr/bin/env python3
 """
-Bản demo nhanh — Minh họa toàn bộ hệ thống Săn Tìm Kho Báu.
-
-Tệp lệnh này chạy 3 phần demo:
-1. Demo môi trường trò chơi (game_environments.py) — chơi thủ công theo giải pháp tối ưu
-2. Demo LLM Agent (llm_agent.py) — cho AI chơi 1 episode
-3. Demo đánh giá — thống kê hiệu suất
-
-Chạy: python quick_demo.py
+Quick demo showing the LLM learning process in detail.
+This script runs a simplified experiment to demonstrate how LLMs learn from experience.
 """
 
 import os
 import sys
+from pathlib import Path
+
 from dotenv import load_dotenv
 
-# Tải biến môi trường từ .env
+# Load environment variables from .env file
 load_dotenv()
 
-from game_environments import TreasureHuntGame, ItemType
+# Add parent directory to path for imports
+sys.path.append(str(Path(__file__).parent))
+
+from game_environment import TreasureHuntGame
 from llm_agent import LLMAgent
 
 
-def demo_game_environment():
-    """Demo 1: Môi trường trò chơi — chơi thủ công theo giải pháp tối ưu.
-    
-    Minh họa cách tương tác với TreasureHuntGame:
-    - Khởi tạo game, xem trạng thái, thực thi hành động
-    - Chạy toàn bộ giải pháp tối ưu từ đầu đến chiến thắng
-    """
+def show_game_solution():
+    """Show the optimal solution to the game."""
     print("\n" + "="*70)
-    print("📦 DEMO 1: MÔI TRƯỜNG TRÒ CHƠI (game_environments.py)")
+    print("GAME SOLUTION (for reference)")
     print("="*70)
     
-    # Khởi tạo trò chơi với seed cố định để tái lập kết quả
-    game = TreasureHuntGame(seed=42)
-    
-    # Hiển thị trạng thái ban đầu
-    print("\n📍 Trạng thái ban đầu:")
-    print(game.get_state_description())
-    
-    # Hiển thị ItemType tiếng Việt
-    print("\n🏷️  Các loại vật phẩm:")
-    for item_type in ItemType:
-        print(f"  {item_type.name:10s} = \"{item_type.value}\"")
-    
-    # Chạy giải pháp tối ưu
-    print("\n" + "-"*70)
-    print("🗺️  CHẠY GIẢI PHÁP TỐI ƯU")
-    print("-"*70)
-    
-    optimal_actions = [
-        "take rusty sword",          # Nhặt kiếm rỉ sét
-        "go east",                   # Đến phòng kho
-        "take red key",              # Nhặt chìa khóa đỏ
-        "take magic crystal",        # Nhặt pha lê ma thuật
-        "try crafting",              # Chế tạo: rusty sword + magic crystal → silver sword
-        "go west",                   # Quay về sảnh lối vào
-        "go north",                  # Đến hành lang (tự động mở khóa bằng red key)
-        "go north",                  # Đến phòng lính canh
-        "attack with silver sword",  # Đánh bại strong guard
-        "go east",                   # Đến phòng kho báu
-        "take dragon's treasure",    # Thu thập kho báu → CHIẾN THẮNG!
-    ]
-    
-    total_reward = 0
-    for i, action in enumerate(optimal_actions, 1):
-        feedback, reward, done = game.execute_action(action)
-        total_reward += reward
-        
-        # Biểu tượng dựa trên reward
-        icon = "✨" if reward > 0 else "📉"
-        print(f"  Bước {i:2d}: {action:30s} → {icon} reward={reward:+.1f} | {feedback[:70]}")
-        
-        if done:
-            break
-    
-    # Kết quả
-    print(f"\n{'🎉' if game.victory else '💀'} Kết quả: {'CHIẾN THẮNG' if game.victory else 'THẤT BẠI'}")
-    print(f"  Tổng reward: {total_reward:.1f}")
-    print(f"  Số bước: {game.moves}")
-    
-    # Hiển thị luật ẩn
-    print("\n" + "-"*70)
-    print("🔮 LUẬT ẨN CỦA TRÒ CHƠI")
-    print("-"*70)
+    game = TreasureHuntGame()
     print(game.get_hidden_rules())
     
-    return game.victory
+    print("\n📝 Optimal solution path:")
+    print("1. Take rusty sword (in entrance)")
+    print("2. Go east to storage")
+    print("3. Take red key")
+    print("4. Take magic crystal")
+    print("5. Try crafting → creates silver sword")
+    print("6. Go west to entrance")
+    print("7. Go north to hallway (uses red key automatically)")
+    print("8. Go north to guard room")
+    print("9. Attack with silver sword → defeats strong guard")
+    print("10. Go east to treasure room")
+    print("11. Take dragon's treasure → Victory!")
+    print("\n✨ Total moves: ~11-12 (optimal)")
 
 
-def demo_llm_agent():
-    """Demo 2: LLM Agent chơi trò chơi — 1 episode với In-Context Learning.
+def run_llm_demo():
+    """Run a simplified LLM demo with just a few episodes."""
+    print("\n" + "🤖"*35)
+    print("LLM IN-CONTEXT LEARNING DEMO")
+    print("🤖"*35)
     
-    Minh họa cách LLMAgent:
-    - Khởi tạo với OpenAI API (đọc từ .env)
-    - Quan sát trạng thái, suy luận, chọn hành động
-    - Tích lũy kinh nghiệm cho các lượt sau
-    """
+    # Check API key
+    api_key = os.getenv("MOONSHOT_API_KEY")
+    if not api_key and not os.getenv("OPENROUTER_API_KEY"):
+        print("\n❌ Error: MOONSHOT_API_KEY not set.")
+        print("Please set your Kimi API key:")
+        print("  export MOONSHOT_API_KEY='your-key-here'")
+        print("\nGet your key at: https://platform.moonshot.cn/")
+        print("Or set OPENROUTER_API_KEY as a universal fallback.")
+        return
+    
+    print("\n✅ API key found!")
+    print("🧠 Initializing Kimi K3 LLM agent...")
+    
+    # Initialize agent
+    agent = LLMAgent(
+        api_key=api_key,
+        model=os.getenv("MOONSHOT_MODEL", "kimi-k3"),
+        temperature=0.7,
+        max_experiences=30
+    )
+    
+    print("\n📚 The LLM will play 3 episodes to learn the game")
+    print("👀 Watch how it reasons and learns from each experience!\n")
+    
+    # Play 3 episodes
+    game = TreasureHuntGame()
+    
+    for episode in range(3):
+        print("\n" + "🎮"*35)
+        print(f"EPISODE {episode + 1} of 3")
+        print("🎮"*35)
+        
+        # Show what the LLM has learned so far
+        if agent.experiences:
+            print(f"\n📊 Experience Memory: {len(agent.experiences)} interactions stored")
+            
+            # Show some key learnings
+            successful = [e for e in agent.experiences if e.success]
+            if successful:
+                print("✅ Successful patterns discovered:")
+                for exp in successful[-3:]:
+                    print(f"   • {exp.action} → reward: {exp.reward:.1f}")
+            
+            failed = [e for e in agent.experiences if not e.success]
+            if failed and len(failed) > 5:
+                print("❌ Mistakes to avoid:")
+                for exp in failed[-2:]:
+                    print(f"   • {exp.action} → reward: {exp.reward:.1f}")
+        
+        # Play episode
+        reward, steps, victory = agent.play_episode(game, verbose=True)
+        
+        print(f"\n📈 Episode {episode + 1} Performance:")
+        print(f"  • Result: {'🎉 Victory!' if victory else '💀 Failed'}")
+        print(f"  • Total Reward: {reward:.2f}")
+        print(f"  • Steps Taken: {steps}")
+        print(f"  • Experiences Collected: {len(agent.experiences)}")
+        
+        if victory:
+            print("\n🎊 The LLM learned to solve the game!")
+            print(f"   It took {episode + 1} episodes to learn")
+            print(f"   Total API calls used: {agent.api_calls}")
+            break
+        
+        if episode < 2:
+            print("\n⏳ Waiting 2 seconds before next episode...")
+            import time
+            time.sleep(2)
+    
+    # Summary
     print("\n" + "="*70)
-    print("🤖 DEMO 2: LLM AGENT CHƠI TRÒ CHƠI (llm_agent.py)")
+    print("DEMO SUMMARY")
     print("="*70)
+    print(f"📊 Total episodes played: {episode + 1}")
+    print(f"🧠 Total experiences collected: {len(agent.experiences)}")
+    print(f"🎯 Victories: {agent.victories}")
+    print(f"📡 API calls made: {agent.api_calls}")
     
-    # Kiểm tra API key
-    if not os.getenv("OPENAI_API_KEY"):
-        print("⚠️  Bỏ qua demo LLM Agent: OPENAI_API_KEY chưa được đặt trong .env")
-        print("   Hãy thêm OPENAI_API_KEY vào file .env để chạy demo này.")
-        return None
-    
-    # Khởi tạo Agent
-    agent = LLMAgent()
-    
-    # Tạo trò chơi
-    game = TreasureHuntGame(seed=42)
-    
-    # Chơi 1 episode
-    print("\n🎮 Bắt đầu episode...")
-    total_reward, steps, victory = agent.play_episode(game, verbose=True)
-    
-    # Thống kê
-    print(f"\n📊 Thống kê Agent:")
-    print(f"  Kinh nghiệm tích lũy: {len(agent.experiences)}")
-    print(f"  Số lần gọi API: {agent.api_calls}")
-    print(f"  Tổng token sử dụng: {agent.total_tokens}")
-    
-    return victory
-
-
-def demo_stochastic():
-    """Demo 3: So sánh chế độ Deterministic và Stochastic.
-    
-    Chạy cùng một chuỗi hành động trên cả hai chế độ
-    để minh họa sự khác biệt về reward.
-    """
-    print("\n" + "="*70)
-    print("🎲 DEMO 3: SO SÁNH DETERMINISTIC vs STOCHASTIC")
-    print("="*70)
-    
-    test_actions = ["take rusty sword", "go east", "take red key"]
-    
-    # Chế độ Deterministic
-    print("\n📐 Chế độ Deterministic (seed=42):")
-    game_det = TreasureHuntGame(seed=42, stochastic=False)
-    for action in test_actions:
-        feedback, reward, done = game_det.execute_action(action)
-        print(f"  {action:25s} → reward={reward:+.1f}")
-    
-    # Chế độ Stochastic — chạy 3 lần với seed khác nhau
-    print("\n🎲 Chế độ Stochastic (3 lần chạy):")
-    for seed in [1, 2, 3]:
-        game_sto = TreasureHuntGame(seed=seed, stochastic=True)
-        rewards = []
-        for action in test_actions:
-            feedback, reward, done = game_sto.execute_action(action)
-            rewards.append(reward)
-        print(f"  Seed {seed}: rewards = [{', '.join(f'{r:+.2f}' for r in rewards)}]")
-    
-    print("\n💡 Nhận xét: Stochastic thêm biến động nhỏ vào reward,")
-    print("   giúp Agent học cách xử lý tình huống không chắc chắn.")
+    if agent.victories > 0:
+        print("\n✨ Key Insight:")
+        print("The LLM learned to solve the game by reasoning about patterns")
+        print("in just a few episodes, without any parameter updates!")
+        print("Traditional RL would need thousands of episodes for the same result.")
+    else:
+        print("\n💡 Note: The LLM is still learning. Run more episodes to see it succeed!")
 
 
 def main():
-    """Hàm chính — chạy tuần tự tất cả các phần demo."""
-    print("╔" + "═"*68 + "╗")
-    print("║" + " BẢN DEMO NHANH — HỆ THỐNG SĂN TÌM KHO BÁU VỚI AI AGENT ".center(68) + "║")
-    print("║" + " Chapter 1: Learning from Experience ".center(68) + "║")
-    print("╚" + "═"*68 + "╝")
+    """Main entry point."""
+    print("\n" + "🎯"*35)
+    print("LEARNING FROM EXPERIENCE: LLM DEMO")
+    print("Replicating insights from 'The Second Half'")
+    print("🎯"*35)
     
-    # Demo 1: Môi trường trò chơi (không cần API)
-    demo_game_environment()
+    # Show solution first
+    show_game_solution()
     
-    # Demo 3: So sánh Deterministic vs Stochastic (không cần API)
-    demo_stochastic()
+    # Ask user if they want to continue
+    response = input("\n▶️ Ready to see how an LLM learns this game? (y/n): ").strip().lower()
     
-    # Demo 2: LLM Agent (cần OPENAI_API_KEY)
-    print("\n" + "─"*70)
-    print("💡 Demo LLM Agent cần OPENAI_API_KEY trong .env.")
-    
-    if os.getenv("OPENAI_API_KEY"):
-        # Hỏi người dùng có muốn chạy demo LLM không (tốn token)
-        print("   API key đã được tìm thấy!")
-        print("   ⚠️  Demo LLM Agent sẽ gọi API và tốn token.")
-        
-        try:
-            answer = input("   Bạn có muốn chạy demo LLM Agent? (y/N): ").strip().lower()
-            if answer in ('y', 'yes'):
-                demo_llm_agent()
-            else:
-                print("   Đã bỏ qua demo LLM Agent.")
-        except (EOFError, KeyboardInterrupt):
-            print("\n   Đã bỏ qua demo LLM Agent.")
+    if response == 'y':
+        run_llm_demo()
     else:
-        print("   ⚠️  OPENAI_API_KEY chưa được đặt. Bỏ qua demo LLM Agent.")
-    
-    # Kết thúc
-    print("\n" + "╔" + "═"*68 + "╗")
-    print("║" + " ✅ DEMO HOÀN TẤT! ".center(68) + "║")
-    print("╚" + "═"*68 + "╝")
+        print("\n👋 Okay, goodbye!")
 
 
 if __name__ == "__main__":
